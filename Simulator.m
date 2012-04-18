@@ -81,7 +81,7 @@
         return EXIT_FAILURE;
     }
     
-    DTiPhoneSimulatorSystemRoot *sdkRoot = [DTiPhoneSimulatorSystemRoot defaultRoot];
+    DTiPhoneSimulatorSystemRoot *sdkRoot = _sdk;
     
     DTiPhoneSimulatorSessionConfig *config = [[DTiPhoneSimulatorSessionConfig alloc] init];
     [config setApplicationToSimulateOnStart:appSpec];
@@ -158,7 +158,7 @@
     }
     [windowList release];
     if (_windowID) {
-        _movie = [[QTMovie alloc] initToWritableFile:[NSString stringWithCString:tmpnam(nil) encoding:[NSString defaultCStringEncoding]] error:NULL];
+        _movie = [[QTMovie alloc] initToWritableFile:_videoPath error:NULL];
         _lastInterval = [NSDate timeIntervalSinceReferenceDate];;
         [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 target:self selector:@selector(addScreenshotToMovie) userInfo:nil repeats:YES];
     }
@@ -168,7 +168,9 @@
     if (_movie) {
         NSDictionary *attributes = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:QTMovieFlatten];
         NSError *error = nil;
-        BOOL success = [_movie writeToFile:_videoPath withAttributes:attributes error:&error];
+        BOOL success = [_movie updateMovieFile];
+        [_movie release];
+        //[_movie writeToFile:_videoPath withAttributes:attributes error:&error];
         if (!success) {
             WaxLog(@"Failed to write movie: %@", error);
         }
