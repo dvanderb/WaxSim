@@ -168,7 +168,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WaxSim_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
-				LD_RUNPATH_SEARCH_PATHS = /Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks;
+				LD_RUNPATH_SEARCH_PATHS = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks /Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks /Applications/Xcode.app/Contents/OtherFrameworks/";
 				PRODUCT_NAME = waxsim;
 			};
 			name = Debug;
@@ -187,7 +187,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WaxSim_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
-				LD_RUNPATH_SEARCH_PATHS = /Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks;
+				LD_RUNPATH_SEARCH_PATHS = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks /Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks /Applications/Xcode.app/Contents/OtherFrameworks/";
 				PRODUCT_NAME = waxsim;
 			};
 			name = Release;
